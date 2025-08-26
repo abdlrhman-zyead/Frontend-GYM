@@ -1,0 +1,164 @@
+
+## 🧠 Assignment Goal
+Build a website using **OOP** concepts + **API**.
+Structure:
+
+* **Games Section**: shows all games.
+* **Details Section**: shows data of a selected game (after sending its `id` to API).
+---
+## ✅ Full Step-by-Step Plan
+---
+
+### **1. Watch the Reference Video + Read API Info**
+
+* Open the folder:
+  📁 [https://drive.google.com/drive/folders/1SUZ4ER2Xt\_jbcV3lCDl3N5\_4yXWLebBe?usp=sharing](https://drive.google.com/drive/folders/1SUZ4ER2Xt_jbcV3lCDl3N5_4yXWLebBe?usp=sharing)
+* Watch the video that explains the steps.
+* Check the **API link** and **category names** inside.
+
+---
+
+### **2. Plan Your Website Structure**
+
+* Visit the demo site: [https://bit.ly/453PP2Q](https://bit.ly/453PP2Q)
+* Identify its layout: it has **2 main sections**:
+
+  * `Games Section`: list of game cards.
+  * `Details Section`: info about a selected game.
+
+---
+
+### **3. Project Folder Setup**
+
+* Create project folder.
+* Create main files:
+
+  * `index.html`
+  * `style.css`
+  * `main.js`
+
+---
+
+### **4. Write Basic HTML Structure**
+
+* Add two `<section>`s in `index.html`:
+
+  ```html
+  <section id="games-section"></section>
+  <section id="details-section" style="display: none;"></section>
+  ```
+
+---
+
+### **5. Design the UI with CSS**
+
+* Style both sections:
+
+  * Cards for games
+  * Beautiful layout for game details
+    *(You can copy some styles based on the sample website)*
+
+---
+
+### **6. Start Your JavaScript with OOP**
+
+* Create these **main classes** in `main.js`:
+
+#### 📦 Class 1: `Game`
+
+Handles game data structure.
+
+```js
+class Game {
+  constructor(id, title, thumbnail, description) {
+    this.id = id;
+    this.title = title;
+    this.thumbnail = thumbnail;
+    this.description = description;
+  }
+}
+```
+
+#### 🧩 Class 2: `UI`
+
+Handles all DOM display tasks.
+
+```js
+class UI {
+  displayGames(gamesArray) {
+    // Create cards and add to #games-section
+  }
+
+  displayGameDetails(gameObject) {
+    // Fill details section with info from gameObject
+  }
+
+  toggleSections() {
+    // Hide games section, show details section
+  }
+}
+```
+
+#### 🌐 Class 3: `GameAPI`
+
+Handles API calls.
+
+```js
+class GameAPI {
+  async fetchGamesByCategory(category) {
+    // fetch from API using category
+  }
+
+  async fetchGameDetailsById(id) {
+    // fetch from API using ID
+  }
+}
+```
+
+---
+
+### **7. Fetch & Show All Games**
+
+* In `main.js`, create instances of `GameAPI` and `UI`.
+* Call `fetchGamesByCategory("shooter")` or any category.
+* Then call `UI.displayGames(gamesArray)`.
+
+---
+
+### **8. Add Event Listener to Each Game Card**
+
+* When user clicks a game card:
+
+  * Get its ID.
+  * Call `GameAPI.fetchGameDetailsById(id)`.
+  * Then call `UI.displayGameDetails(gameObject)`.
+  * Use `UI.toggleSections()` to hide games and show details.
+
+---
+
+### **9. Optional: Add Back Button**
+
+* In the details section, add a "Back" button.
+* When clicked, show games again and hide details.
+
+---
+
+### **10. Final Touches**
+
+* Add loading indicators while fetching.
+* Clean UI and check design.
+* Test on different games and categories.
+
+---
+
+### ✅ Summary of Needed Classes
+
+| Class     | Responsibility                         |
+| --------- | -------------------------------------- |
+| `Game`    | Stores one game data                   |
+| `GameAPI` | Handles API requests                   |
+| `UI`      | Handles displaying content on the page |
+
+---
+
+If you'd like, I can also give you example code snippets for each class or event listener — just say the word!

@@ -1,0 +1,115 @@
+Analysis -> clear Build
+### 🔵 **TASK ANALYSIS**
+Goal**: Rebuild this website 👉 [https://routeegy.github.io/startFramework/#/](https://routeegy.github.io/startFramework/#/)
+**Using**: React + Components + Routing
+**Deadline**: Tuesday, 10 PM
+
+### ✅ **STEP-BY-STEP PLAN**
+
+#### 1. **Set up your React project**
+
+* Create a new React app using your IDE or terminal. (npm create vite@latest)
+* Clean unnecessary files (like `App.css`, `logo.svg`).
+
+#### 2. **Understand the structure of the sample website**
+
+* Explore and write down the main sections/pages (e.g., Home, About, Portfolio, Contact).
+* Observe what repeats on all pages (like Navbar, Footer).
+
+#### 3. **Create Components for each part**
+
+* Make a component for each page.
+* Make shared components (e.g., Navbar, Footer) once and reuse.
+
+#### 4. **Add React Router**
+
+* Install and set up React Router DOM.
+* Wrap your app with `<BrowserRouter>`.
+* Create routing paths to switch between your components (pages).
+
+#### 5. **Build the layout**
+
+* Add Navbar at the top and Footer at the bottom.
+* Use a main layout component to wrap pages and keep design consistent.
+
+#### 6. **Style your components**
+
+* Match the sample website's styles using CSS or a CSS framework.
+* Make sure your pages look similar to the reference.
+
+#### 7. **Test your routes**
+
+* Click all links and test the navigation between components.
+* Fix anything that doesn't work as expected.
+
+#### 8. **Final check before submission**
+
+* Check spelling, styles, responsiveness, and routing.
+* Run your project and confirm it works correctly.
+
+#### 9. **Submit before the deadline**
+
+* Push your code to GitHub or the required platform.
+* Double-check the link is working before 10 PM Tuesday.
+
+---
+
+### 🧠 TIPS
+
+* Work step-by-step, don’t jump ahead.
+* Focus on understanding how components and routes work.
+* If something breaks, isolate and fix it one small part at a time.
+
+---
+
+Let me know if you want a checklist version for tracking your progress!
+
+
+
+
+assigment
+
+now i list allcomponents in APP file i want create lot pages
+so i want create routing
+
+
+idea of rout /componentName appear component name
+not correct list components under our
+so based on route of component i appear it
+
+1 - installl react-roter-dom
+
+
+-> JS built in objust location.hostname and location.pathname in BOM
+
+2 - so i create any route by method called createBrowserRouter i create by it list include lot of objects each object include path and element (called component in Angular) we will return i want all thing about it
+it take pathe and whice component or html code or  ... ? will return , not must name path be same name component but what best practice
+
+we put list of routers in variable and path to component RouterProvider as props value
+3 - Return component in return scope of App function (App component) use <RouterProvider routes={variableOfListOfRouters}/>
+e.g
+import './App.css'
+import Home from './Home/Home.jsx'
+import { createBrowserRouter } from "react-router-dom"
+import {RouterProvider} from "react-router-dom"
+function App() {
+const router =createBrowserRouter(
+    [
+        {
+          path:"/",
+          element:<Home/>
+        }
+    ]
+)
+  return (
+    <>
+        <RouterProvider router={router}/>
+
+    </>
+  )
+}
+
+export default App
+
+but now we navigate by url i create request manull so we has loading with each request
+behind the seen the components replace from request to another mean old component remove and new component replace it
